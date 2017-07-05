@@ -6,8 +6,11 @@ document.getElementById("container").innerHTML="";
   var path="M"+x1+","+y1+" L"+x2+","+y2+" L"+x2+","+(y2-hgt)+" L"+x1+","+(y1-hgt)+" z";
     return path;
 }
-var Chart=function(obj){
-    this.render=function(){
+
+    Render=function(){
+     var obj=arguments[0];
+     obj=JSON.parse(obj);
+     console.log(typeof obj);
        k=(Number(obj.height)-200)/5;
        var paper=new Raphael(obj.renderAt,Number(obj.width),2*Number(obj.height));
        var back_grnd=paper.rect(80,80,Number(obj.width)-130,2*(Number(obj.height)-200)).attr({fill:"0-#dcdcdc:5-#f8f8ff:95",opacity:0.3});
@@ -263,15 +266,16 @@ var Chart=function(obj){
            
                 
             });
-            var sYAxisName=paper.text((Number(obj.width)-50)+40,80+(Number(obj.height)-200),obj.dataSource.chart.sYAxisName).attr({"text-anchor":"middle","transform":"R90,"+((Number(obj.width)-50)+30)+","+(80+(Number(obj.height)-200)),"font-size":12,"font-weight":"bold"});
-            var pYAxisName=paper.text(30,80+(Number(obj.height)-200),obj.dataSource.chart.pYAxisName).attr({"text-anchor":"middle","transform":"R-90,30,"+(80+(Number(obj.height)-200)),"font-size":12,"font-weight":"bold"});
+            var sYAxisName=paper.text((Number(obj.width)-50)+40,80+(Number(obj.height)-200)/2,obj.dataSource.chart.sYAxisName).attr({"text-anchor":"middle","transform":"R90,"+((Number(obj.width)-50)+30)+","+(80+(Number(obj.height)-200)/2),"font-size":12,"font-weight":"bold"});
+            var pYAxisName=paper.text(30,80+(Number(obj.height)-200)/2,obj.dataSource.chart.pYAxisName).attr({"text-anchor":"middle","transform":"R-90,30,"+(80+(Number(obj.height)-200)/2),"font-size":12,"font-weight":"bold"});
 
             var caption=paper.text(80+(Number(obj.width)-130)/2,20,obj.dataSource.chart.caption).attr({"text-anchor":"middle","font-size":Number(obj.dataSource.chart.captionFontSize),"font-weight":"bold"});;
             var caption=paper.text(80+(Number(obj.width)-130)/2,50,obj.dataSource.chart.subCaption).attr({"text-anchor":"middle","font-size":Number(obj.dataSource.chart.subcaptionFontSize)});;
 
       };
      
-      }
       
+      
+
 
 
