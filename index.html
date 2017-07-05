@@ -4,142 +4,189 @@
         <script type="text/javascript" src="raphael.js"></script>
         <script type="text/javascript" defer src="render.js"></script>
         <script type="text/javascript">
-            window.onload=function(){
-             var barchart=new Chart({
-                  "type": "3d-bar",      
-                  "renderAt": "container",
-                  "width": "600",
-                  "height": "400",
-                  "dataSource":  {
-                  "chart": {
-                  "caption": "Facebook's annual revenue and profit in %",
-                  "subCaption": "2007-2015",
-                  "captionFontSize": "18",
-                  "subcaptionFontSize": "17",
-                  "xAxisName": "Year",
-                  "pYAxisName": "Amount (In million USD)",
-                  "sYAxisName": "Profit %",
-                  "sYAxisMaxValue": "40",
-                 },
-                 "categories":[
-                {
-                 "category": [
-                {
-                "label": "2007",
-              
-                 },
-                {
-               "label": "2008",
-              
-                },
-               {
-               "label": "2009",
+           window.onload=function(){
+//-------------------------------------------------------------------
+document.getElementById("data").defaultValue="{\
+\"type\":\"3d-bar\",\
+\"renderAt\":\"container\",\
+\"width\":\"600\",\
+\"height\":\"400\",\
+\"dataSource\":{\
+\"chart\":{\
+\"caption\":\"Facebook\'s annual revenue and profit in %\",\
+\"subCaption\":\"2007-2015\",\
+\"captionFontSize\":\"18\",\
+\"subcaptionFontSize\":\"17\",\
+\"xAxisName\":\"Year\",\
+\"pYAxisName\":\"Amount (In million USD)\",\
+\"sYAxisName\":\"Profit %\",\
+\"sYAxisMaxValue\":\"40\"\
+},\
+\"categories\":[\
+{\
+\"category\": [\
+{\
+\"label\":\"2007\"\
+},\
+{\
+\"label\":\"2008\"\
+},\
+{\
+\"label\":\"2009\"\
+},\
+{\
+\"label\":\"2010\"\
+},\
+{\
+\"label\":\"2011\"\
+},\
+{\
+\"label\":\"2012\"\
+},\
+{\
+\"label\":\"2013\"\
+},\
+{\
+\"label\":\"2014\"\
+},\
+{\
+\"label\":\"2015\"\
+},\
+{\
+\"label\":\"2016\"\
+},\
+{\
+\"label\":\"2017\"\
+},\
+{\
+\"label\":\"2018\"\
+},\
+{\
+\"label\":\"2019\"\
+},\
+{\
+\"label\":\"2020\"\
+}\
+]\
+}\
+],\
+\"dataset\":[\
+{\
+\"seriesName\":\"Revenues\",\
+\"data\":[\
+{\
+\"value\":\"153\"\
+},\
+{\
+\"value\":\"272\"\
+},\
+{\
+\"value\":\"777\"\
+},\
+{\
+\"value\":\"-10000\"\
+},\
+{\
+\"value\":\"-3711\"\
+},\
+{\
+\"value\":\"5089\"\
+},\
+{\
+\"value\":\"7872\"\
+},\
+{\
+\"value\":\"12466\"\
+},\
+{\
+\"value\":\"17928\"\
+},\
+{\
+\"value\":\"-4000\"\
+},\
+{\
+\"value\":\"6089\"\
+},\
+{\
+\"value\":\"872\"\
+},\
+{\
+\"value\":\"1266\"\
+},\
+{\
+\"value\":\"1728\"\
+}\
+]\
+},\
+{\
+\"seriesName\":\"Profit %\",\
+\"renderAs\":\"line\",\
+\"parentYAxis\":\"S\",\
+\"data\":[\
+{\
+\"value\":\"25\"\
+},\
+{\
+\"value\":\"20\"\
+},\
+{\
+\"value\":\"15.78\"\
+},\
+{\
+\"value\":\"21.05\"\
+},\
+{\
+\"value\":\"6.66\"\
+},\
+{\
+\"value\":\"-33.33\"\
+},\
+{\
+\"value\":\"6.25\"\
+},\
+{\
+\"value\":\"25\"\
+},\
+{\
+\"value\":\"5.88\"\
+},\
+{\
+\"value\":\"-25\"\
+},\
+{\
+\"value\":\"-35\"\
+}\
+,\
+{\
+\"value\":\"25\"\
+}\
+,\
+{\
+\"value\":\"15\"\
+},\
+{\
+\"value\":\"35\"\
+}\
+]\
+}\
+]\
+}\
+}";
+                     
+    
+//---------------------------------------------------------------------------
+       document.getElementById("button").addEventListener("click",function(){
+        Render(document.getElementById("data").value);
+       });
+       
              
-               },
-              {
-               "label": "2010",
-              
-              },
-              {
-               "label": "2011",
-               
-              },
-              {
-               "label": "2012",
-               
-            },
-            {
-               "label": "2013",
-               
-            },
-            {
-               "label": "2014",
-               
-            },
-            {
-               "label": "2015",
-               
-            }
-            ]
-           }
-           ],
-          "dataset":[
-          {
-         "seriesName":"Revenues",
-         "data":[
-         {
-          "value":"153"
-         },
-         {
-          "value":"272"
-         },
-         {
-          "value":"777"
-         },
-         {
-          "value":"-10000"
-        },
-        {
-          "value":"-3711"
-        },
-        {
-          "value":"5089"
-        },
-        {
-          "value":"7872"
-        },
-        {
-          "value":"12466"
-        },
-        {
-          "value":"17928"
-        }
-        ]
-       },
-      {
-     "seriesName": "Profit %",
-     "renderAs": "line",
-     "parentYAxis": "S",
-     "data":[
-     {
-        "value":"25"
-     },
-     {
-        "value":"20"
-     }, 
-     {
-        "value":"15.78"
-     },
-     {
-        "value":"21.05"
-     },
-     {
-        "value":"6.66"
-     },
-     {
-        "value":"-33.33"
-     },
-     {
-        "value":"6.25"
-     },
-     {
-        "value":"25"
-     },
-     {
-        "value":"5.88"
-     }
-    ]
-    }
-   ]
-  }
-             });
-             barchart.render();
-             
-            }
+            };
             
         </script>
     </head>
     <body>
+        <textarea id="data" style="width:500;height:500"></textarea></br>
+        <button id="button">Render</button>
         <div id="container">The chart will load here</div>  
         
     </body>
