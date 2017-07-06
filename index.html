@@ -1,6 +1,14 @@
 
 <html>
     <head>
+        <style>
+          div{
+              float : right;
+              position:absolute;
+              top:0px;
+              left:500px;
+             }
+        </style>
         <script type="text/javascript" src="raphael.js"></script>
         <script type="text/javascript" defer src="render.js"></script>
         <script type="text/javascript">
@@ -13,27 +21,14 @@ document.getElementById("data").defaultValue="{\
 \"height\":\"400\",\
 \"dataSource\":{\
 \"chart\":{\
-\"caption\":\"Facebook\'s annual revenue and profit in %\",\
-\"subCaption\":\"2007-2015\",\
+\"caption\":\"Messi vs Ronaldo(no of goals)\",\
+\"subCaption\":\"2010-2017\",\
 \"captionFontSize\":\"18\",\
-\"subcaptionFontSize\":\"17\",\
-\"xAxisName\":\"Year\",\
-\"pYAxisName\":\"Amount (In million USD)\",\
-\"sYAxisName\":\"Profit %\",\
-\"sYAxisMaxValue\":\"40\"\
+\"subcaptionFontSize\":\"17\"\
 },\
 \"categories\":[\
 {\
 \"category\": [\
-{\
-\"label\":\"2007\"\
-},\
-{\
-\"label\":\"2008\"\
-},\
-{\
-\"label\":\"2009\"\
-},\
 {\
 \"label\":\"2010\"\
 },\
@@ -53,119 +48,71 @@ document.getElementById("data").defaultValue="{\
 \"label\":\"2015\"\
 },\
 {\
-\"label\":\"2016\"\
+\"value\":\"2016\"\
 },\
 {\
-\"label\":\"2017\"\
-},\
-{\
-\"label\":\"2018\"\
-},\
-{\
-\"label\":\"2019\"\
-},\
-{\
-\"label\":\"2020\"\
+\"value\":\"2017\"\
 }\
 ]\
 }\
 ],\
 \"dataset\":[\
 {\
-\"seriesName\":\"Revenues\",\
+\"seriesName\":\"Messi\",\
 \"data\":[\
 {\
-\"value\":\"153\"\
+\"value\":\"32\"\
 },\
 {\
-\"value\":\"272\"\
+\"value\":\"59\"\
 },\
 {\
-\"value\":\"777\"\
+\"value\":\"52\"\
 },\
 {\
-\"value\":\"-10000\"\
+\"value\":\"58\"\
 },\
 {\
-\"value\":\"-3711\"\
+\"value\":\"45\"\
 },\
 {\
-\"value\":\"5089\"\
+\"value\":\"91\"\
 },\
 {\
-\"value\":\"7872\"\
+\"value\":\"59\"\
 },\
 {\
-\"value\":\"12466\"\
-},\
-{\
-\"value\":\"17928\"\
-},\
-{\
-\"value\":\"-4000\"\
-},\
-{\
-\"value\":\"6089\"\
-},\
-{\
-\"value\":\"872\"\
-},\
-{\
-\"value\":\"1266\"\
-},\
-{\
-\"value\":\"1728\"\
+\"value\":\"60\"\
 }\
 ]\
 },\
 {\
-\"seriesName\":\"Profit %\",\
-\"renderAs\":\"line\",\
-\"parentYAxis\":\"S\",\
+\"seriesName\":\"Ronaldo\",\
+\"renderAs\":\"bar\",\
 \"data\":[\
 {\
-\"value\":\"25\"\
+\"value\":\"33\"\
 },\
 {\
-\"value\":\"20\"\
+\"value\":\"55\"\
 },\
 {\
-\"value\":\"15.78\"\
+\"value\":\"57\"\
 },\
 {\
-\"value\":\"21.05\"\
+\"value\":\"61\"\
 },\
 {\
-\"value\":\"6.66\"\
+\"value\":\"69\"\
 },\
 {\
-\"value\":\"-33.33\"\
+\"value\":\"63\"\
 },\
 {\
-\"value\":\"6.25\"\
+\"value\":\"60\"\
 },\
 {\
-\"value\":\"25\"\
-},\
-{\
-\"value\":\"5.88\"\
-},\
-{\
-\"value\":\"-25\"\
-},\
-{\
-\"value\":\"-35\"\
-}\
-,\
-{\
-\"value\":\"25\"\
-}\
-,\
-{\
-\"value\":\"15\"\
-},\
-{\
-\"value\":\"35\"\
+\"value\":\"48\"\
 }\
 ]\
 }\
@@ -185,6 +132,7 @@ document.getElementById("data").defaultValue="{\
         </script>
     </head>
     <body>
+        
         <textarea id="data" style="width:500;height:500"></textarea></br>
         <button id="button">Render</button>
         <div id="container">The chart will load here</div>  
