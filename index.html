@@ -5,119 +5,123 @@
           div{
               float : right;
               position:absolute;
-              top:0px;
-              left:500px;
+              top:30px;
+              left:550px;
              }
+           .rotate{
+              position:absolute;
+            }
         </style>
         <script type="text/javascript" src="raphael.js"></script>
         <script type="text/javascript" defer src="render.js"></script>
         <script type="text/javascript">
            window.onload=function(){
 //-------------------------------------------------------------------
-document.getElementById("data").defaultValue="{\
-\"type\":\"3d-bar\",\
-\"renderAt\":\"container\",\
-\"width\":\"600\",\
-\"height\":\"400\",\
-\"dataSource\":{\
-\"chart\":{\
-\"caption\":\"Messi vs Ronaldo(no of goals)\",\
-\"subCaption\":\"2010-2017\",\
-\"captionFontSize\":\"18\",\
-\"subcaptionFontSize\":\"17\"\
-},\
-\"categories\":[\
-{\
-\"category\": [\
-{\
-\"label\":\"2010\"\
-},\
-{\
-\"label\":\"2011\"\
-},\
-{\
-\"label\":\"2012\"\
-},\
-{\
-\"label\":\"2013\"\
-},\
-{\
-\"label\":\"2014\"\
-},\
-{\
-\"label\":\"2015\"\
-},\
-{\
-\"value\":\"2016\"\
-},\
-{\
-\"value\":\"2017\"\
-}\
-]\
-}\
-],\
-\"dataset\":[\
-{\
-\"seriesName\":\"Messi\",\
-\"data\":[\
-{\
-\"value\":\"32\"\
-},\
-{\
-\"value\":\"59\"\
-},\
-{\
-\"value\":\"52\"\
-},\
-{\
-\"value\":\"58\"\
-},\
-{\
-\"value\":\"45\"\
-},\
-{\
-\"value\":\"91\"\
-},\
-{\
-\"value\":\"59\"\
-},\
-{\
-\"value\":\"60\"\
-}\
-]\
-},\
-{\
-\"seriesName\":\"Ronaldo\",\
-\"renderAs\":\"bar\",\
-\"data\":[\
-{\
-\"value\":\"33\"\
-},\
-{\
-\"value\":\"55\"\
-},\
-{\
-\"value\":\"57\"\
-},\
-{\
-\"value\":\"61\"\
-},\
-{\
-\"value\":\"69\"\
-},\
-{\
-\"value\":\"63\"\
-},\
-{\
-\"value\":\"60\"\
-},\
-{\
-\"value\":\"48\"\
-}\
-]\
-}\
-]\
-}\
+
+document.getElementById("data").defaultValue="{\n\
+\"type\":\"3d-bar\",\n\
+\"renderAt\":\"container\",\n\
+\"width\":\"600\",\n\
+\"height\":\"400\",\n\
+\"dataSource\":{\n\
+\"chart\":{\n\
+\"caption\":\"Messi vs Ronaldo(no of goals)\",\n\
+\"subCaption\":\"2010-2017\",\n\
+\"captionFontSize\":\"18\",\n\
+\"subcaptionFontSize\":\"17\"\n\
+},\n\
+\"categories\":[\n\
+{\n\
+\"category\": [\n\
+{\n\
+\"label\":\"2010\"\n\
+},\n\
+{\n\
+\"label\":\"2011\"\n\
+},\n\
+{\n\
+\"label\":\"2012\"\n\
+},\n\
+{\n\
+\"label\":\"2013\"\n\
+},\n\
+{\n\
+\"label\":\"2014\"\n\
+},\n\
+{\n\
+\"label\":\"2015\"\n\
+},\n\
+{\n\
+\"value\":\"2016\"\n\
+},\n\
+{\n\
+\"value\":\"2017\"\n\
+}\n\
+]\n\
+}\n\
+],\n\
+\"dataset\":[\n\
+{\n\
+\"seriesName\":\"Messi\",\n\
+\"data\":[\n\
+{\n\
+\"value\":\"32\"\n\
+},\n\
+{\n\
+\"value\":\"59\"\n\
+},\n\
+{\n\
+\"value\":\"52\"\n\
+},\n\
+{\n\
+\"value\":\"58\"\n\
+},\n\
+{\n\
+\"value\":\"45\"\n\
+},\n\
+{\n\
+\"value\":\"91\"\n\
+},\n\
+{\n\
+\"value\":\"59\"\n\
+},\n\
+{\n\
+\"value\":\"60\"\n\
+}\n\
+]\n\
+},\n\
+{\n\
+\"seriesName\":\"Ronaldo\",\n\
+\"renderAs\":\"bar\",\n\
+\"data\":[\n\
+{\n\
+\"value\":\"33\"\n\
+},\n\
+{\n\
+\"value\":\"55\"\n\
+},\n\
+{\n\
+\"value\":\"57\"\n\
+},\n\
+{\n\
+\"value\":\"61\"\n\
+},\n\
+{\n\
+\"value\":\"69\"\n\
+},\n\
+{\n\
+\"value\":\"63\"\n\
+},\n\
+{\n\
+\"value\":\"60\"\n\
+},\n\
+{\n\
+\"value\":\"48\"\n\
+}\n\
+]\n\
+}\n\
+]\n\
+}\n\
 }";
                      
     
@@ -133,7 +137,7 @@ document.getElementById("data").defaultValue="{\
     </head>
     <body>
         
-        <textarea id="data" style="width:500;height:500"></textarea></br>
+        <textarea id="data" style="width:500;height:500;color:red"></textarea></br>
         <button id="button">Render</button>
         <div id="container">The chart will load here</div>  
         
