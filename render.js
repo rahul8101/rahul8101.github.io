@@ -1,6 +1,6 @@
 
 document.getElementById("container").innerHTML="";
- var i,j,k,i1,max,max1=0,max2=0,data1=[],data2=[],tool_text1=[],tool_text2=[],text,length,div,block_size,face_set=[],points_set,pallete=[],height=[],tool_tip,flag=1,m=1,line,cursor_enabled_bar=1,cursor_enabled_line=1;
+ var i,j,k,i1,max,max1=0,max2=0,data1=[],data2=[],tool_text1=[],tool_text2=[],text,length,div,block_size,face_set=[],points_set,pallete=[],height=[],tool_tip,flag=1,m=1,line,cursor_enabled_bar=1,cursor_enabled_line=1,rotXu=2,rotXd=-2,rotYr=2,rotYl=-2;
  pallete=["270-#9370db:5-#483d8b:95","180-#9370db:5-#483d8b:95","#483d8b"],
  pallete2=["270-#ffcc66:5-#ff9933:95","180-#ffcc66:5-#ff9933:95","#ff9933"];
  pallete3=["270-#9999ff:5-#483d8b:95","180-#9999ff:5-#483d8b:95","#483d8b"];
@@ -360,7 +360,8 @@ document.getElementById("container").innerHTML="";
          button_l.style="left:810px;top:430px;background-color:lime;color:white;border:none";
          document.body.appendChild(button_l);
          button_l.addEventListener('click',function(){
-         rotateY(paper,-30,300,200);
+         rotateY(paper,rotYl,300,200);
+         rotYl+=-2;
          });     
           
          var button_r=document.createElement("BUTTON");
@@ -369,7 +370,8 @@ document.getElementById("container").innerHTML="";
          button_r.style="left:860px;top:430px;background-color:lime;color:white;border:none";
          document.body.appendChild(button_r);
          button_r.addEventListener('click',function(){
-         rotateY(paper,30,300,200);
+         rotateY(paper,rotYr,300,200);
+         rotYr+=2;
         });  
 
         var button_u=document.createElement("BUTTON");
@@ -378,7 +380,8 @@ document.getElementById("container").innerHTML="";
          button_u.style="left:835px;top:405px;background-color:lime;color:white;border:none";
          document.body.appendChild(button_u);
          button_u.addEventListener('click',function(){
-         rotateX(paper,30,300,200);
+         rotateX(paper,rotXu,300,200);
+         rotXu+=2;
         });  
         
         var button_d=document.createElement("BUTTON");
@@ -387,7 +390,8 @@ document.getElementById("container").innerHTML="";
          button_d.style="left:835px;top:455px;background-color:lime;color:white;border:none";
          document.body.appendChild(button_d);
          button_d.addEventListener('click',function(){
-         rotateX(paper,-30,300,200);
+         rotateX(paper,rotXd,300,200);
+         rotXd+=-2;
         }); 
         
          var button_reset=document.createElement("BUTTON");
@@ -405,4 +409,3 @@ document.getElementById("container").innerHTML="";
       
 
 
- 
